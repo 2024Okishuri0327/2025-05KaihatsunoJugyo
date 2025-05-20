@@ -1,0 +1,12 @@
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\bin\Debug\2025-05-09_kaihatsunojugyoNo1.exe.config
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\bin\Debug\2025-05-09_kaihatsunojugyoNo1.exe
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\bin\Debug\2025-05-09_kaihatsunojugyoNo1.pdb
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\2025-05-09_kaihatsunojugyoNo1.csproj.AssemblyReference.cache
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\_2025_05_09_kaihatsunojugyoNo1.Properties.Resources.resources
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\2025-05-09_kaihatsunojugyoNo1.csproj.GenerateResource.cache
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\2025-05-09_kaihatsunojugyoNo1.csproj.CoreCompileInputs.cache
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\2025-05-09_kaihatsunojugyoNo1.exe
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\2025-05-09_kaihatsunojugyoNo1.pdb
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\_2025_05_09_kaihatsunojugyoNo1.Frm_startScreen.resources
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\_2025_05_09_kaihatsunojugyoNo1.Frm_GameScreen.resources
+C:\Users\tayta\source\repos\2025-05-09_kaihatsunojugyoNo1\2025-05-09_kaihatsunojugyoNo1\obj\Debug\_2025_05_09_kaihatsunojugyoNo1.Frm_ResultScreen.resources
