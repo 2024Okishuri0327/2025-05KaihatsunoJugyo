@@ -147,7 +147,7 @@
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Frm_StartScreen";
-            this.Text = "S";
+            this.Text = "うどん打～讃岐流タイピング修行～";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

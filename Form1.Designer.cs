@@ -51,7 +51,7 @@
             // 
             this.lbl_chrTypingChar.AutoSize = true;
             this.lbl_chrTypingChar.Font = new System.Drawing.Font("ＭＳ ゴシック", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_chrTypingChar.Location = new System.Drawing.Point(382, 255);
+            this.lbl_chrTypingChar.Location = new System.Drawing.Point(382, 249);
             this.lbl_chrTypingChar.Name = "lbl_chrTypingChar";
             this.lbl_chrTypingChar.Size = new System.Drawing.Size(389, 34);
             this.lbl_chrTypingChar.TabIndex = 1;
@@ -60,11 +60,10 @@
             // tbx_inpTypingChar
             // 
             this.tbx_inpTypingChar.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.tbx_inpTypingChar.Location = new System.Drawing.Point(417, 314);
+            this.tbx_inpTypingChar.Location = new System.Drawing.Point(388, 304);
             this.tbx_inpTypingChar.Name = "tbx_inpTypingChar";
-            this.tbx_inpTypingChar.Size = new System.Drawing.Size(334, 25);
+            this.tbx_inpTypingChar.Size = new System.Drawing.Size(396, 25);
             this.tbx_inpTypingChar.TabIndex = 2;
-            
             // 
             // pbr_ProgressBar
             // 
