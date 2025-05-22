@@ -6,6 +6,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,12 +19,17 @@ namespace _2025_05_09_kaihatsunojugyoNo1
     {
 
         // 入力させる文字を表示テキストに更新するリスト
-        string[] arry_EasyDisplayStrings = { "Wait a minute", "Hold it up", "He is one gigantic motherfucker", "Remember I promised to kill you last", "" };
-        string[] arry_NomalDisplayStrings = { "Wait a minute", "Hold it up", "He is one gigantic motherfucker", "Remember I promised to kill you last", "" };
+        string[] arry_EasyDisplayStrings = { "Wait a minute", "Hold it up", "He is one gigantic motherfucker", "" };
+        string[] arry_NomalDisplayStrings = { "He is one gigantic motherfucker", "Remember I promised to kill you last", "He is one gigantic motherfucker", "Remember I promised to kill you last", "" };
         string[] arry_HardDisplayStrings = { };
         private string[] strDisplayString;
+        
         // 表示テキストのリストのインデックス
         private int idxDisplayStrings = 0;
+
+        // タイピングの獲得点数の変数
+        private int iScorePoint = 0;
+        private int iMaxScorePoint;
 
         // タイピングの時間制限の変数
         private Timer timer;
@@ -34,22 +40,25 @@ namespace _2025_05_09_kaihatsunojugyoNo1
 
             // ユーザーネームの表示
             lbl_chrUseName.Text = str_UserName;
-
+            lbl_chrScorePoint.Text = iScorePoint.ToString();
 
             // 入力させるタイピングの文字列を表示
             // Todo 難易度別でタイマーと入力文字列の違いをする
             if (Level_Time == 60)
             {
                 strDisplayString = arry_EasyDisplayStrings;
-                
+                iMaxScorePoint = 3000;
+
             }
             if (Level_Time == 30)
             {
                 strDisplayString = arry_NomalDisplayStrings;
+                iMaxScorePoint = 5000;
             }
             if(Level_Time == 15)
             {
                 strDisplayString = arry_HardDisplayStrings;
+                iMaxScorePoint = 8000;
             }
             lbl_chrTypingChar.Text = strDisplayString[idxDisplayStrings];
 
@@ -84,30 +93,43 @@ namespace _2025_05_09_kaihatsunojugyoNo1
         {
             if (Matcher == Matchee)
             {
-                // Todo タイマーの値をMaxにリセットする
-                pbr_ProgressBar.Value = pbr_ProgressBar.Maximum;
-
                 // 表示テキストを更新する
-                if (idxDisplayStrings <= strDisplayString.Length - 1)
+                if (idxDisplayStrings < strDisplayString.Length - 1)
                 {
 
                     idxDisplayStrings++;
                     lbl_chrTypingChar.Text = strDisplayString[idxDisplayStrings];
+                    iScorePoint = iScorePoint + CalculateScore(iMaxScorePoint);
+                    lbl_chrScorePoint.Text = iScorePoint.ToString();
 
-                  
                 }
                 else
                 {
                     // Todo 画面遷移でPerfect表示
+                    MessageBox.Show("ゲームクリア！！");
                 }
 
+                // Todo タイマーの値をMaxにリセットする
+                pbr_ProgressBar.Value = pbr_ProgressBar.Maximum;
 
             }
 
-
-
         }
 
+
+        private int CalculateScore(int MaxScore)
+        {
+            int denominator = pbr_ProgressBar.Maximum - pbr_ProgressBar.Value;
+
+            // 分母が 0 になる可能性がある場合、デフォルト値を設定
+            if (denominator == 0)
+            {
+                return MaxScore / strDisplayString.Length; // 例: (最高スコア/問題数)の値を返す
+            }
+
+            return (MaxScore / strDisplayString.Length) / denominator;
+
+        }
 
 
         private void Form1_Load(object sender, EventArgs e)
@@ -126,7 +148,7 @@ namespace _2025_05_09_kaihatsunojugyoNo1
             }
             else
             {
-                // Todo:ifでゲーム画面が閉じたらメッセージを表示させないようにする
+                // Todo 時間切れで強制的にリザルト画面へ遷移させる
 
                 timer.Stop();
                 MessageBox.Show("時間切れ！", "ゲーム終了", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -135,12 +157,16 @@ namespace _2025_05_09_kaihatsunojugyoNo1
 
         private void Frm_GameScreen_FormClosing(object sender, FormClosingEventArgs e)
         {
-            // **フォームが閉じるときにタイマーを停止**
+            // フォームが閉じるときにタイマーを停止
             timer.Stop();
             timer.Dispose();
             MessageBox.Show("タイマーを停止しました。");
         }
 
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

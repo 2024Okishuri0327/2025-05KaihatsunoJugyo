@@ -34,6 +34,8 @@
             this.pbr_ProgressBar = new System.Windows.Forms.ProgressBar();
             this.lbl_chrPoint = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_chrScorePoint = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             // 
             this.lbl_chrTypingChar.AutoSize = true;
             this.lbl_chrTypingChar.Font = new System.Drawing.Font("ＭＳ ゴシック", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lbl_chrTypingChar.Location = new System.Drawing.Point(382, 249);
+            this.lbl_chrTypingChar.Location = new System.Drawing.Point(382, 248);
             this.lbl_chrTypingChar.Name = "lbl_chrTypingChar";
             this.lbl_chrTypingChar.Size = new System.Drawing.Size(389, 34);
             this.lbl_chrTypingChar.TabIndex = 1;
@@ -84,6 +86,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.richTextBox1);
+            this.panel1.Controls.Add(this.lbl_chrScorePoint);
             this.panel1.Controls.Add(this.tbx_inpTypingChar);
             this.panel1.Controls.Add(this.lbl_chrPoint);
             this.panel1.Controls.Add(this.lbl_chrTypingChar);
@@ -93,6 +97,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1136, 526);
             this.panel1.TabIndex = 5;
+            // 
+            // lbl_chrScorePoint
+            // 
+            this.lbl_chrScorePoint.Font = new System.Drawing.Font("ＭＳ ゴシック", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lbl_chrScorePoint.Location = new System.Drawing.Point(820, 116);
+            this.lbl_chrScorePoint.Name = "lbl_chrScorePoint";
+            this.lbl_chrScorePoint.Size = new System.Drawing.Size(106, 44);
+            this.lbl_chrScorePoint.TabIndex = 5;
+            this.lbl_chrScorePoint.Text = "120";
+            this.lbl_chrScorePoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Location = new System.Drawing.Point(446, 362);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(255, 34);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "(ここに文字が出ます)";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Frm_GameScreen
             // 
@@ -119,6 +144,8 @@
         private System.Windows.Forms.ProgressBar pbr_ProgressBar;
         private System.Windows.Forms.Label lbl_chrPoint;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lbl_chrScorePoint;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

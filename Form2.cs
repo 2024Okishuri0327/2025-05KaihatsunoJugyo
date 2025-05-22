@@ -40,9 +40,9 @@ namespace _2025_05_09_kaihatsunojugyoNo1
 
         private void rbt_chrLevelEasy_CheckedChanged(object sender, EventArgs e)
         {
-            bl_GameReady_slcLevel = true;
-            
             int_Level = 60;
+
+            bl_GameReady_slcLevel = true;            
 
             if (bl_GameReady_inpName == true && bl_GameReady_slcLevel == true)
             {
@@ -53,11 +53,20 @@ namespace _2025_05_09_kaihatsunojugyoNo1
         private void rbt_chrLevelNormal_CheckedChanged(object sender, EventArgs e)
         {
             int_Level = 30;
+
+            bl_GameReady_slcLevel = true;
+
+            if (bl_GameReady_inpName == true && bl_GameReady_slcLevel == true)
+            {
+                btn_chrStart.Visible = true;
+            }
         }
 
         private void rbt_chrLevelHard_CheckedChanged(object sender, EventArgs e)
         {
             int_Level = 15;
+
+
         }
 
         private void btn_chrStart_Click(object sender, EventArgs e)
