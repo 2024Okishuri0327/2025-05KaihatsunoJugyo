@@ -8,6 +8,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,11 +20,11 @@ namespace _2025_05_09_kaihatsunojugyoNo1
     {
 
         // 入力させる文字を表示テキストに更新するリスト
-        string[] arry_EasyDisplayStrings = { "Wait a minute", "Hold it up", "He is one gigantic motherfucker", "" };
-        string[] arry_NomalDisplayStrings = { "He is one gigantic motherfucker", "Remember I promised to kill you last", "He is one gigantic motherfucker", "Remember I promised to kill you last", "" };
-        string[] arry_HardDisplayStrings = { };
+        string[] arry_EasyDisplayStrings = { "Wait a minute", "Hold it up", "I lied", "We did", "Where is she?", "I like Cadillacs", "The price.", "Wrong", "Just him", "He’s dead tired" };
+        string[] arry_NomalDisplayStrings = { "Mellow out", "I thought you were", "Listen to that", "Do not disturb my friend", "Dead? You thought wrong", "You are gonna love it","Any carry-on luggage?" };
+        string[] arry_HardDisplayStrings = { "Throw away that chickenshit gun", "Remember I promised to kill you last", "Come right here and get in this Cadillac", "My people got some business with you", "Open your mouth again and I will nail it shut" };
         private string[] strDisplayString;
-        
+
         // 表示テキストのリストのインデックス
         private int idxDisplayStrings = 0;
 
@@ -105,11 +106,18 @@ namespace _2025_05_09_kaihatsunojugyoNo1
                 }
                 else
                 {
-                    // Todo 画面遷移でPerfect表示
-                    MessageBox.Show("ゲームクリア！！");
+                    // 画面遷移でPerfect表示
+                    Frm_ResultScreen formR = new Frm_ResultScreen(lbl_chrUseName.Text, iMaxScorePoint, iScorePoint, pbr_ProgressBar.Value);
+
+                    formR.Show();
+
+                    this.Hide();
+
+                    timer.Stop();
+
                 }
 
-                // Todo タイマーの値をMaxにリセットする
+                // タイマーの値をMaxにリセットする
                 pbr_ProgressBar.Value = pbr_ProgressBar.Maximum;
 
             }
@@ -151,7 +159,14 @@ namespace _2025_05_09_kaihatsunojugyoNo1
                 // Todo 時間切れで強制的にリザルト画面へ遷移させる
 
                 timer.Stop();
-                MessageBox.Show("時間切れ！", "ゲーム終了", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Frm_ResultScreen formR = new Frm_ResultScreen(lbl_chrUseName.Text, iMaxScorePoint, iScorePoint, pbr_ProgressBar.Value);
+
+                formR.Show();
+
+                this.Hide();
+
+                timer.Stop();
+                
             }
         }
 
@@ -166,6 +181,11 @@ namespace _2025_05_09_kaihatsunojugyoNo1
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Frm_GameScreen_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

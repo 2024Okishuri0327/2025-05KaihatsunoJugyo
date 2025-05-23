@@ -66,6 +66,12 @@ namespace _2025_05_09_kaihatsunojugyoNo1
         {
             int_Level = 15;
 
+            bl_GameReady_slcLevel = true;
+
+            if (bl_GameReady_inpName == true && bl_GameReady_slcLevel == true)
+            {
+                btn_chrStart.Visible = true;
+            }
 
         }
 
@@ -85,7 +91,10 @@ namespace _2025_05_09_kaihatsunojugyoNo1
 
         }
 
-
+        private void Frm_StartScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 
 }

@@ -126,6 +126,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.lbl_chrTitle);
             this.panel1.Controls.Add(this.btn_chrStart);
             this.panel1.Controls.Add(this.rbt_chrLevelHard);
@@ -133,9 +136,9 @@
             this.panel1.Controls.Add(this.lbl_inpUserName);
             this.panel1.Controls.Add(this.rbt_chrLevelEasy);
             this.panel1.Controls.Add(this.rbt_chrLevelNormal);
-            this.panel1.Location = new System.Drawing.Point(40, 110);
+            this.panel1.Location = new System.Drawing.Point(72, 77);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1178, 514);
+            this.panel1.Size = new System.Drawing.Size(1012, 514);
             this.panel1.TabIndex = 8;
             // 
             // Frm_StartScreen
@@ -148,6 +151,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Frm_StartScreen";
             this.Text = "うどん打～讃岐流タイピング修行～";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_StartScreen_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

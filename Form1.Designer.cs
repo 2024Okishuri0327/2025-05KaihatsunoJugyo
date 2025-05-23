@@ -35,7 +35,6 @@
             this.lbl_chrPoint = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_chrScorePoint = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,7 +85,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Controls.Add(this.lbl_chrScorePoint);
             this.panel1.Controls.Add(this.tbx_inpTypingChar);
             this.panel1.Controls.Add(this.lbl_chrPoint);
@@ -108,17 +106,6 @@
             this.lbl_chrScorePoint.Text = "120";
             this.lbl_chrScorePoint.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(446, 362);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(255, 34);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "(ここに文字が出ます)";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
-            // 
             // Frm_GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -129,6 +116,7 @@
             this.Font = new System.Drawing.Font("ＭＳ ゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Name = "Frm_GameScreen";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Frm_GameScreen_FormClosing_1);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -145,7 +133,6 @@
         private System.Windows.Forms.Label lbl_chrPoint;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_chrScorePoint;
-        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
