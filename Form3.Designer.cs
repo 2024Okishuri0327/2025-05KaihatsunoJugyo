@@ -53,7 +53,7 @@
             this.lbl_slcLogout.Name = "lbl_slcLogout";
             this.lbl_slcLogout.Size = new System.Drawing.Size(170, 32);
             this.lbl_slcLogout.TabIndex = 1;
-            this.lbl_slcLogout.Text = "Log out";
+            this.lbl_slcLogout.Text = "Exit";
             this.lbl_slcLogout.Click += new System.EventHandler(this.lbl_slcLogout_Click);
             // 
             // lbl_slcContinue
